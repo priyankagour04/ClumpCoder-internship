@@ -31,11 +31,11 @@ const Table = () => {
   };
 
   return (
-    <div className="mt-5  bg-white">
-      <div className="">
-        <table className="min-w-full table-auto">
-          <thead className="bg-gray-50">
-            <tr>
+    <div className="mt-5 bg-white">
+      <div className="overflow-x-scroll ">
+        <table className=" table-auto ">
+          <thead className="bg-gray-50 ">
+            <tr className=''>
               {/* Column headers */}
               <th className="px-6 py-2 ">Lead Ref No.</th>
               <th className="px-6 py-2 ">Requirement For</th>
@@ -78,44 +78,46 @@ const Table = () => {
                 <td className="px-4 py-2 border">{row.col14}</td>
                 <td className="px-4 py-2 border">{row.col15}</td>
                 <td className="px-4 py-2 border">
-                  <div className="relative">
-                    <button
-                      className="text-blue-500 hover:text-blue-600"
-                      onClick={() => handleDropdownToggle(row.id)}
-                    >
-                      Actions
-                    </button>
-                    {activeDropdown === row.id && (
-                      <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg">
-                        <ul className="py-2">
-                          <li>
-                          <button
-                              onClick={() => handleActionChange('View', row.id)}
-                              className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                            >
-                              View
-                            </button>
-                          </li>
-                          <li>
-                          <button
-                              onClick={() => handleActionChange('Edit', row.id)}
-                              className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                            >
-                              Edit
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              onClick={() => handleActionChange('Delete')}
-                              className="block px-4 py-2 text-gray-700  hover:bg-gray-200"
-                            >
-                              Delete
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-                  </div>
+                <div className="relative">
+  <button
+    className="text-blue-500 hover:text-blue-600"
+    onClick={() => handleDropdownToggle(row.id)}
+  >
+    Actions
+  </button>
+  {activeDropdown === row.id && (
+    <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg z-50">
+      {/* Add z-50 class here */}
+      <ul className="py-2">
+        <li>
+          <button
+            onClick={() => handleActionChange('View', row.id)}
+            className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+          >
+            View
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => handleActionChange('Edit', row.id)}
+            className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+          >
+            Edit
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => handleActionChange('Delete')}
+            className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+          >
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+  )}
+</div>
+
                 </td>
               </tr>
             ))}

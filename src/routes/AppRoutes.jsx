@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         {/* Search bar at the top */}
         <Navbar />
         {/* Dynamic content */}
-        <main className="p-4 bg-gray-100">{children}</main>
+        <main className="p-4 bg-gray-100 h-full">{children}</main>
       </div>
     </div>
   );

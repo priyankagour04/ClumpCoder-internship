@@ -93,13 +93,33 @@ const Sidebar = () => {
         { name: "Chart 2", path: "/charts/chart2", isPro: true },
       ],
     },
+    {
+      key: "UIelements",
+      icon: BsUiChecks,
+      title: "UI Elements",
+      items: [
+        { name: "UI element 1", isPro: false },
+        { name: "UI element 2", isPro: true },
+      ],
+    },
+    {
+      key: "Authentication",
+      icon: RiLoginBoxLine,
+      title: "Authentication",
+      items: [
+        { name: "Auth page", isPro: false },
+        { name: "Auth logic", isPro: true },
+      ],
+    },
   ];
 
   return (
-    <div className="bg-primary text-white min-w-60 h-fit min-h-screen p-4">
+    <div className="bg-primary text-white min-w-64   h-fit min-h-fit p-4">
       <h1 className="text-2xl flex items-center gap-3 font-bold mb-4">ADMIN</h1>
       <div>
         <h1 className="text-gray-400 flex items-center gap-3 font-semibold mb-4 ms-4 mt-10">Menu</h1>
+
+        {/* Sidebar menu starts here */}
         {menuItems.map(({ key, icon, title, items }) => (
           <ul key={key} className="mb-6">
             <Dropdown
@@ -110,6 +130,36 @@ const Sidebar = () => {
               onToggle={() => toggleDropdown(key)}
               onItemClick={handleNavigation} // Pass the navigation handler
             />
+            {/* Insert button between menus */}
+            {key === 'forms' && (
+              <li className="mb-4">
+                <button
+                  className="font-medium flex text-start items-center w-full px-4 hover:bg-gray-100 hover:bg-opacity-50 hover:text-white rounded"
+                  onClick={() => alert("Button clicked")}
+                >
+                  Contract Review/ Application Review
+                </button>
+              </li>
+            )}
+            {key === 'forms' && (
+              <li className="mb-4">
+                <button
+                  className="font-medium flex text-start items-center w-full px-4 hover:bg-gray-100 hover:bg-opacity-50 hover:text-white rounded"
+                  onClick={() => alert("Button clicked")}
+                >
+                   Quotation
+                </button>
+              </li>
+            )}
+            {key === 'forms' && (
+              <li className="mb-4">
+                <button
+                  className="font-medium flex text-start items-center w-full px-4 hover:bg-gray-100 hover:bg-opacity-50 hover:text-white rounded"
+                  onClick={() => alert("Button clicked")}
+                >
+  Questionnaire                 </button>
+              </li>
+            )}
           </ul>
         ))}
       </div>

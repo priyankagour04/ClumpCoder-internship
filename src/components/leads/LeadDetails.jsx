@@ -14,7 +14,7 @@ const LeadDetail = () => {
    <>
 
 <div className="text-2xl font-semibold">Lead Details </div>
-    <div className="flex space-x-6 ">
+    <div className="flex space-x-6 mt-5 ">
   
       <div className="border text-primary space-y-3 bg-white p-6 w-2/4">
         <h2 className=" font-semibold mb-2">Lead Details</h2>
