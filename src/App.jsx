@@ -1,17 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Sidebar from './components/sidebar/Sidebar'
-
-function App() {
+import React from "react";
+import AppRoutes from "./routes/AppRoutes";
 
 
-  return (
-    <>
-     <Sidebar/>
-    </>
-  )
-}
+const App = () => {
+  return <AppRoutes />;
+};
 
-export default App
+export default App;
