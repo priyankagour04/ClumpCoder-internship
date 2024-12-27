@@ -10,7 +10,14 @@ import { LuMessageSquareText } from "react-icons/lu";
 import { FaRegUser } from "react-icons/fa";
 import { LiaFileInvoiceSolid } from "react-icons/lia";
 
-const Dropdown = ({ icon: Icon, title, items, isOpen, onToggle, onItemClick }) => (
+const Dropdown = ({
+  icon: Icon,
+  title,
+  items,
+  isOpen,
+  onToggle,
+  onItemClick,
+}) => (
   <li className="mb-4">
     <button
       onClick={onToggle}
@@ -19,12 +26,18 @@ const Dropdown = ({ icon: Icon, title, items, isOpen, onToggle, onItemClick }) =
     >
       <Icon />
       {title}
-      <span className={`transform transition-transform ${isOpen ? "rotate-180" : ""}`}>
+      <span
+        className={`transform transition-transform ${
+          isOpen ? "rotate-180" : ""
+        }`}
+      >
         <IoIosArrowDown />
       </span>
     </button>
     <ul
-      className={`pl-4 mt-2 font-semibold space-y-4 ${isOpen ? "block" : "hidden"} transition-all`}
+      className={`pl-4 mt-2 font-semibold space-y-4 ${
+        isOpen ? "block" : "hidden"
+      } transition-all`}
     >
       {items.map(({ name, path, isPro }, index) => (
         <li key={index} className="flex items-center justify-between">
@@ -114,10 +127,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="bg-primary text-white min-w-64   h-fit min-h-fit p-4">
+    <div className="bg-primary text-white fixed h-screen min-h-fit p-4">
       <h1 className="text-2xl flex items-center gap-3 font-bold mb-4">ADMIN</h1>
       <div>
-        <h1 className="text-gray-400 flex items-center gap-3 font-semibold mb-4 ms-4 mt-10">Menu</h1>
+        <h1 className="text-gray-400 flex items-center gap-3 font-semibold mb-4 ms-4 mt-10">
+          Menu
+        </h1>
 
         {/* Sidebar menu starts here */}
         {menuItems.map(({ key, icon, title, items }) => (
@@ -131,7 +146,7 @@ const Sidebar = () => {
               onItemClick={handleNavigation} // Pass the navigation handler
             />
             {/* Insert button between menus */}
-            {key === 'forms' && (
+            {key === "forms" && (
               <li className="mb-4">
                 <button
                   className="font-medium flex text-start items-center w-full px-4 hover:bg-gray-100 hover:bg-opacity-50 hover:text-white rounded"
@@ -141,23 +156,24 @@ const Sidebar = () => {
                 </button>
               </li>
             )}
-            {key === 'forms' && (
+            {key === "forms" && (
               <li className="mb-4">
                 <button
                   className="font-medium flex text-start items-center w-full px-4 hover:bg-gray-100 hover:bg-opacity-50 hover:text-white rounded"
                   onClick={() => alert("Button clicked")}
                 >
-                   Quotation
+                  Quotation
                 </button>
               </li>
             )}
-            {key === 'forms' && (
+            {key === "forms" && (
               <li className="mb-4">
                 <button
                   className="font-medium flex text-start items-center w-full px-4 hover:bg-gray-100 hover:bg-opacity-50 hover:text-white rounded"
-                  onClick={() => alert("Button clicked")}
+                  onClick={() => handleNavigation("/questioniers/form")}
                 >
-  Questionnaire                 </button>
+                  Questionnaire{" "}
+                </button>
               </li>
             )}
           </ul>

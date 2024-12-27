@@ -32,7 +32,7 @@ const Table = () => {
 
   return (
     <div className="mt-5 bg-white">
-      <div className="overflow-x-scroll ">
+      <div className="overflow-x-scroll overflow-y-hidden  w-[1000px]">
         <table className=" table-auto ">
           <thead className="bg-gray-50 ">
             <tr className=''>
@@ -86,7 +86,7 @@ const Table = () => {
     Actions
   </button>
   {activeDropdown === row.id && (
-    <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg z-50">
+    <div className="absolute right-0  mt-2 bg-white border rounded-lg shadow-lg z-50">
       {/* Add z-50 class here */}
       <ul className="py-2">
         <li>
