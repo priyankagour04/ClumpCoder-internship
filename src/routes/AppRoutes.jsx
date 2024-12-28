@@ -35,7 +35,15 @@ const AppRoutes = () => {
   return (
     
       <Routes>
-      
+       <Route
+          path="/"
+          element={
+            <Layout>
+              <Leads />
+            </Layout>
+          }
+        />
+
         <Route
           path="/leads"
           element={
